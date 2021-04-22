@@ -9,11 +9,11 @@ const Dashboard = () => {
     console.log(url);
 
     return (
-        <div>
-            <nav>
-                <NavLink to={`${url}`}>Informacje</NavLink>
-                <NavLink to={`${url}/repair-history`}>Informacje</NavLink>
-                <NavLink to={`${url}/scheduled-list`}>Informacje</NavLink>
+        <>
+            <nav className='navigation-panel'>
+                <NavLink to={`${url}`}>Informations</NavLink>
+                <NavLink to={`${url}/repair-history`}>Repair history</NavLink>
+                <NavLink to={`${url}/scheduled-list`}>Scheduled works</NavLink>
             </nav>
 
             <Switch>
@@ -32,7 +32,7 @@ const Dashboard = () => {
                 </Route>
             </Switch>
 
-        </div>
+        </>
     )
 }
 
