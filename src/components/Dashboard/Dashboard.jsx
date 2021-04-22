@@ -8,8 +8,6 @@ import {Navbar, Nav} from 'react-bootstrap';
 
 const Dashboard = () => {
     const {path, url} = useRouteMatch();
-    console.log(path);
-    console.log(url);
 
     return (
         <>
@@ -18,7 +16,7 @@ const Dashboard = () => {
             <Switch>
                 <Route exact path={`${url}`}>
                     <div>
-                        Informacje o samochodzie
+                        TODO: Information about car
                     </div>
                 </Route>
                 <Route path={`${url}/repair-history`}>
@@ -26,13 +24,10 @@ const Dashboard = () => {
                 </Route>
                 <Route path={`${url}/scheduled-list`}>
                     <div>
-                        Todo list
+                        TODO: List of scheduled task
                     </div>
                 </Route>
             </Switch>
-
-
-
         </>
     )
 }

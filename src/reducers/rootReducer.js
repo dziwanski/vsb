@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import worksReducer from "./worksReducer";
+import repairHistoryReducer from "./repairHistoryReducer";
 
 export const rootReducer = combineReducers({
-    worksReducer: worksReducer,
+    repairHistoryReducer: repairHistoryReducer,
 });

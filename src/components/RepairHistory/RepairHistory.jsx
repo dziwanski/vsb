@@ -1,20 +1,28 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import TableRow from "./TableRow";
-import {Table} from 'react-bootstrap';
+import AddRepairForm from './AddRepairForm';
+import {Table, Form, Button, Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {deleteRepair} from '../../actions/actions';
 
 const RepairHistory = () => {
-    const works = useSelector(store => store.worksReducer);
+    const works = useSelector(store => store.repairHistoryReducer);
+    const dispatch = useDispatch();
+
+    const dispatchDeleteRepair = id => () => dispatch(deleteRepair(id));
 
     const worksList = works.map(work => (
-        <TableRow key={work.id} {...work} date="00/00/0000" />
+        <TableRow key={work.id} {...work} handleRemove={dispatchDeleteRepair(work.id)}/>
     ));
 
     return (
-        <Table striped hover>
-            <thead>
+        <>
+            <AddRepairForm />
+
+            <Table striped hover>
+                <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Date</th>
                     <th>Distance</th>
                     <th>Description</th>
@@ -22,11 +30,12 @@ const RepairHistory = () => {
                     <th>Price</th>
                     <th>Actions</th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 {worksList}
-            </tbody>
-        </Table>
+                </tbody>
+            </Table>
+        </>
     );
 }
 
