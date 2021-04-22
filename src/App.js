@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import store from './store/store';
 // Components
 import Home from "./components/Home/Home";
-import List from "./components/List/List";
+import Dashboard from "./components/Dashboard/Dashboard";
 // Style
 import './App.scss';
 
@@ -16,8 +16,8 @@ function App() {
                         <Route exact path='/'>
                             <Home/>
                         </Route>
-                        <Route exact path='/home'>
-                            <List/>
+                        <Route path='/dashboard'>
+                            <Dashboard/>
                         </Route>
                     </Switch>
                 </div>
