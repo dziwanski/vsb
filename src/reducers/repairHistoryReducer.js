@@ -1,11 +1,11 @@
-import * as actions from '../actions/actionTypes';
+import * as actions from '../actions/RepairHistory/actionTypes';
 
 let indexOfWork = 0;
 
 const initialValues = [
     {
         workshop: 'Andrzej',
-        date: '22/22/2222',
+        date: '2021-04-15',
         description: 'Wymiana rozrządu, świec, oleju, klocków przednich',
         distance: 245500,
         price: 2000,
@@ -13,7 +13,7 @@ const initialValues = [
     },
     {
         workshop: 'Andrzej',
-        date: '11/11/1111',
+        date: '2051-04-18',
         description: 'Naprawa przepustnicy',
         distance: 245600,
         price: 10,
@@ -21,7 +21,7 @@ const initialValues = [
     },
     {
         workshop: 'Andrzej',
-        date: '23/56/2222',
+        date: '2071-04-34',
         description: 'Naprawa 3',
         distance: 245500,
         price: 2000,
@@ -29,7 +29,7 @@ const initialValues = [
     },
     {
         workshop: 'Andrzej',
-        date: '15/15/2004',
+        date: '2011-04-34',
         description: 'Naprawa 4',
         distance: 245600,
         price: 10,
@@ -38,7 +38,6 @@ const initialValues = [
 ]
 
 const repairHistoryReducer = (state = initialValues, action) => {
-    console.log(action);
     switch (action.type) {
         case actions.ADD_WORK:
             const {date, workshop, description, distance, price} = action.payload;
@@ -56,6 +55,7 @@ const repairHistoryReducer = (state = initialValues, action) => {
         case actions.DELETE_WORK:
             return state.filter(element => element.id !== action.payload.id);
         case actions.EDIT_WORK:
+            // TODO: Implement EDIT_WORK
         default:
             return state;
     }

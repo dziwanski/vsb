@@ -3,7 +3,7 @@ import TableRow from "./TableRow";
 import AddRepairForm from './AddRepairForm';
 import {Table, Form, Button, Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {deleteRepair} from '../../actions/actions';
+import {deleteRepair} from '../../actions/RepairHistory/actions';
 
 const RepairHistory = () => {
     const works = useSelector(store => store.repairHistoryReducer);

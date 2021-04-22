@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {Button, Form} from "react-bootstrap";
-import {addRepair} from '../../actions/actions';
+import {addRepair} from '../../actions/RepairHistory/actions';
 
 const AddRepairForm = () => {
     const [date, setDate] = useState('');
