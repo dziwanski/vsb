@@ -37,6 +37,7 @@ const initialValues = [
     }
 ]
 
+// @ts-ignore
 const repairHistoryReducer = (state = initialValues, action) => {
     switch (action.type) {
         case actions.ADD_WORK:

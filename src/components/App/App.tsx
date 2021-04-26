@@ -4,7 +4,7 @@ import store from '../../store/store';
 // Components
 import Home from "../Home/Home";
 import Dashboard from "../Dashboard/Dashboard";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // Style
 import './App.scss';
 
@@ -17,9 +17,14 @@ function App() {
                         <Route exact path='/'>
                             <Home/>
                         </Route>
-                        <PrivateRoute path='/dashboard'>
-                            <Dashboard/>
-                        </PrivateRoute>
+                        <ProtectedRoute
+                            path='/dashboard'
+                            authenticationPath="/login"
+                            component={Dashboard}
+                            isAuthenticated={true}
+                        />
+                            {/*<Dashboard/>*/}
+                        {/*</ProtectedRoute>*/}
                     </Switch>
                 </div>
             </BrowserRouter>

@@ -11,8 +11,11 @@ const AddRepairForm = () => {
     const [price, setPrice] = useState(0);
 
     const dispatch = useDispatch();
+
+    // @ts-ignore
     const dispatchAddRepair = dataSet => dispatch(addRepair(dataSet));
 
+    // @ts-ignore
     const handleSubmit = event => {
         event.preventDefault();
 
@@ -25,7 +28,8 @@ const AddRepairForm = () => {
         });
     }
 
-    const handleChange = (setStateMethod) => (event) => setStateMethod(event.target.value);
+    // @ts-ignore
+    const handleChange = setStateMethod => event => setStateMethod(event.target.value);
 
     return (
         <Form className="mr-1" onSubmit={handleSubmit}>

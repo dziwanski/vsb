@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button, ButtonGroup} from 'react-bootstrap';
 
+
+// @ts-ignore
 const TableRow = ({id, person, description, distance, price, date, handleRemove}) => {
     return (
         <tr>

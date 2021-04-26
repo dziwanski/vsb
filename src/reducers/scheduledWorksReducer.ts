@@ -7,6 +7,7 @@ const initialValues = [
     }
 ];
 
+// @ts-ignore
 const scheduledWorksReducer = (state = initialValues, action) => {
     switch (action.type) {
         case actions.ADD_SCHEDULED_WORK:

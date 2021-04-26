@@ -6,11 +6,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {deleteRepair} from '../../actions/RepairHistory/actions';
 
 const RepairHistory = () => {
+    // @ts-ignore
     const works = useSelector(store => store.repairHistoryReducer);
     const dispatch = useDispatch();
 
+    // @ts-ignore
     const dispatchDeleteRepair = id => () => dispatch(deleteRepair(id));
 
+    // @ts-ignore
     const worksList = works.map(work => (
         <TableRow key={work.id} {...work} handleRemove={dispatchDeleteRepair(work.id)}/>
     ));

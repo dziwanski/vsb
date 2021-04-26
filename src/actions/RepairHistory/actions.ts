@@ -1,5 +1,5 @@
 import * as actions from './actionTypes';
-
+// @ts-ignore
 export const addRepair = ({date, workshop, description, distance, price}) => ({
     type: actions.ADD_WORK,
     payload: {
@@ -11,6 +11,7 @@ export const addRepair = ({date, workshop, description, distance, price}) => ({
     }
 });
 
+// @ts-ignore
 export const deleteRepair = id => ({
     type: actions.DELETE_WORK,
     payload: {
@@ -18,6 +19,7 @@ export const deleteRepair = id => ({
     }
 })
 
+// @ts-ignore
 export const editRepair = ({person, description, distance, price, id}) => ({
     type: actions.EDIT_WORK,
 })
